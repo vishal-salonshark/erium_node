@@ -14,16 +14,16 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
-      <main className="min-h-screen flex justify-start items-start">
+      {/* <main className="min-h-screen flex justify-start items-start">
       <Navbar/>
-      {/* <Navigation/> */}
       <div className='w-[85%]  h-full'>
         <div className='w-full z-20 shadow-lg shadow-gray-300 h-12'></div>
       <div className=' w-full h-full'>
         {children}
       </div>
       </div>
-    </main>
+    </main> */}
+    {children}
       </body>
     </html>
   )

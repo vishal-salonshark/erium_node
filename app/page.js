@@ -4,7 +4,8 @@ import Navigation from '@/components/Navigation'
 export default function Home() {
   return (
     <main className="min-h-screen">
-      {/* <Navigation/> */}
+      {/* <h1>HELLO</h1> */}
+  
     </main>
   )
 }

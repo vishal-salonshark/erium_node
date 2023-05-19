@@ -8,7 +8,7 @@ import { BsFillPeopleFill, BsFillQuestionCircleFill } from "react-icons/bs";
 
 const Navbar = () => {
     const Menus = [
-        { name: "Dashbord", icon: <MdSpaceDashboard/>, href: "/Home" },
+        { name: "Dashbord", icon: <MdSpaceDashboard/>, href: "/Dashboard" },
         { name: "Wi-Fi", icon: <MdWifi/>, href: "/Wi-Fi"  },
         { name: "VPN", icon: <MdOutlineVpnLock/>, href: ""  },
         { name: "Packages", icon: <MdFolderZip/>, href: ""  },
