@@ -1,6 +1,6 @@
 "use client";
 
-import axios from "axios";
+// import axios from "axios";
 import Link from "next/link";
 import React, { useState } from "react";
 
@@ -9,24 +9,55 @@ const Register = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const submitHandler = async (e) => {
-    e.preventDefault();
-    console.log(name)
-    console.log(email)
-    console.log(password)
+  // const submitHandler = async (e) => {
+  //   e.preventDefault();
+  //   console.log(name)
+  //   console.log(email)
+  //   console.log(password)
     
-    try {
-      const { data } = await axios.post("/api/register", {
-        name,
-        email,
-        password,
-      });
+  //   try {
+  //     const { data } = await axios.post("/api/register", {
+  //       name,
+  //       email,
+  //       password,
+  //     });
 
-      console.log(data);
-    } catch (error) {
-      console.log(error);
+  //     console.log(data);
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+        const response = await fetch('/api/register', {
+            method:'POST',
+            headers:{"Content_Type":"application/json"},
+            body: JSON.stringify({
+                name: name,
+                email:email,
+                password:password
+            })
+        })
+        // // Set the status based on the response from the API route
+        // if (response.status === 200) {
+        //     setUser({
+        //       name: '',
+        //       email:'',
+        //       password:''
+        //     })
+        //     setStatus('success');
+        // } else {
+        //     setStatus('error');
+        // }
+
+    }catch (e) {
+        console.log(e)
     }
-  };
+
+}
 
   return (
     
@@ -86,7 +117,7 @@ const Register = () => {
 
           <form
             className="w-96 h-[30rem] border-2 flex flex-col justify-center items-center border-gray-500 rounded-2xl p-5 "
-            onSubmit={submitHandler}
+            onSubmit={handleSubmit}
           >
             <h1 className="mb-8 text-2xl font-extrabold text-center">Login</h1>
             <div className="flex flex-col justify-center items-center mb-4">

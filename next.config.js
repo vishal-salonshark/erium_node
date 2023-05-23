@@ -1,10 +1,8 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
+// /** @type {import("next").NextConfig} */
+module.exports = {
   experimental: { appDir: true },
-    env: {
-        DB_URI: "mongodb+srv://eriumNode:eriumnode@cluster1.x2qamwz.mongodb.net/",
-        NEXTAUTH_SECRET: "codingwithvishal",
-      },
+  webpack(config) {
+    config.experiments = { ...config.experiments, topLevelAwait: true }
+    return config
+  },
 }
-
-module.exports = nextConfig
